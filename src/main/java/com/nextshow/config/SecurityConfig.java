@@ -35,10 +35,14 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
 
                 // Public APIs
-                .requestMatchers(
-                    "/api/users/register",
-                    "/api/users/login"
-                ).permitAll()
+               // Public APIs
+.requestMatchers(
+    "/api/users/register",
+    "/api/users/login",
+    "/api/events/**",
+    "/api/categories/**",
+    "/api/shows/**"
+).permitAll()
 
                 // Admin APIs
                 .requestMatchers("/api/admin/**")
